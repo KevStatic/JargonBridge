@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Jargon Bridge",
+  "version": "1.0.0",
+  "description": "Translate technical jargon into business-friendly language instantly",
+
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "contextMenus"
+  ],
+
+  "host_permissions": [
+    "https://jargonbridge-api-12345.azurewebsites.net/*"
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Jargon Bridge - Translate Technical Text"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  }
+}

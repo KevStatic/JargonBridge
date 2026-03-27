@@ -1,0 +1,6 @@
+@JargonBridgeAPI_HostAddress = http://localhost:5113
+
+GET {{JargonBridgeAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

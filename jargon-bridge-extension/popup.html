@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Jargon Bridge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-section">
+      <h1>🌉 Jargon Bridge</h1>
+      <p class="subtitle">Technical → Business</p>
+    </div>
+    <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
+  </div>
+
+  <!-- Tab Navigation -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="translator">Translate</button>
+    <button class="tab-btn" data-tab="history">History</button>
+    <button class="tab-btn" data-tab="settings">Settings</button>
+  </div>
+
+  <!-- Translator Tab -->
+  <div id="translator" class="tab-content active">
+    <!-- Explanation Mode Selector -->
+    <div class="mode-selector">
+      <label>Explanation Level:</label>
+      <select id="modeSelect">
+        <option value="standard">Standard</option>
+        <option value="executive">Executive Summary</option>
+        <option value="detailed">Detailed</option>
+      </select>
+    </div>
+
+    <!-- Input Section -->
+    <div class="input-section">
+      <textarea 
+        id="input" 
+        placeholder="Paste technical text here or select text on the page..." 
+        spellcheck="false"
+      ></textarea>
+      <div class="char-count">
+        <span id="charCount">0</span> / 500 characters
+      </div>
+    </div>
+
+    <!-- Translate Button -->
+    <button id="translateBtn" class="translate-btn">
+      <span id="btnText">Translate</span>
+      <span id="spinner" class="spinner" style="display: none;"></span>
+    </button>
+
+    <!-- Output Section -->
+    <div class="output-section" id="outputSection" style="display: none;">
+      <div class="output-header">
+        <h3>Translation</h3>
+        <button id="copyBtn" class="copy-btn" title="Copy to clipboard">📋 Copy</button>
+      </div>
+      <div id="output" class="output-content"></div>
+    </div>
+
+    <!-- Error Message -->
+    <div id="errorMsg" class="error-message" style="display: none;"></div>
+  </div>
+
+  <!-- History Tab -->
+  <div id="history" class="tab-content">
+    <div class="history-container">
+      <div id="historyList" class="history-list"></div>
+      <button id="clearHistoryBtn" class="clear-history-btn" style="display: none;">
+        🗑️ Clear History
+      </button>
+    </div>
+  </div>
+
+  <!-- Settings Tab -->
+  <div id="settings" class="tab-content">
+    <div class="settings-container">
+      <div class="setting-item">
+        <label for="darkModeToggle">🌙 Dark Mode</label>
+        <input type="checkbox" id="darkModeToggle">
+      </div>
+      
+      <div class="setting-item">
+        <label for="saveHistoryToggle">💾 Save History</label>
+        <input type="checkbox" id="saveHistoryToggle" checked>
+      </div>
+
+      <div class="setting-item">
+        <label>API Endpoint</label>
+        <input type="text" id="apiEndpoint" placeholder="https://..." readonly>
+      </div>
+
+      <button id="testApiBtn" class="test-api-btn">🔗 Test Connection</button>
+      <div id="apiStatus" class="api-status"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
